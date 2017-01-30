@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
     public title: Title
   ) {
 
-    for (let i = 1; i < 300; i++) {
+    for (let i = 1; i < 400; i++) {
       this.images.push({
         name: `image 1`,
         url: `http://placehold.it/${i * 2}x${i * 2}}`
