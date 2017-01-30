@@ -1,7 +1,5 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
+import { IImageLazyLoadConfig } from 'ng2-image-lazy-load';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { AppState } from '../app.service';
 import { Title } from './title';
@@ -17,18 +15,41 @@ import { XLargeDirective } from './x-large';
     Title
   ],
   // Our list of styles in our component. We may add more to compose many styles together
-  styleUrls: [ './home.component.css' ],
+  styleUrls: ['./home.component.css'],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
   // Set our default values
   public localState = { value: '' };
+
+  public images: any[] = [];
+
+  @Input()
+  public lazyLoadConfig: IImageLazyLoadConfig = {
+    headers: {
+    },
+    loadingClass: 'placeholder',
+
+  };
+
   // TypeScript public modifiers
   constructor(
     public appState: AppState,
     public title: Title
-  ) {}
+  ) {
+
+    for (let i = 1; i < 300; i++) {
+      this.images.push({
+        name: `image 1`,
+        url: `http://placehold.it/${i * 2}x${i * 2}}`
+      });
+
+    }
+
+  }
+
+
 
   public ngOnInit() {
     console.log('hello `Home` component');

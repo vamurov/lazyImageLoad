@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {ImageLazyLoadModule, WebWorkerService} from 'ng2-image-lazy-load';
+
+
 import {
   NgModule,
   ApplicationRef
@@ -28,6 +31,7 @@ import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
+import { LazyLoadImageModule } from 'ng2-lazyload-image';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -60,6 +64,7 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    ImageLazyLoadModule, LazyLoadImageModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
