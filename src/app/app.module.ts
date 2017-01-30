@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {ImageLazyLoadModule, WebWorkerService} from 'ng2-image-lazy-load';
+import { ImageLazyLoadModule, WebWorkerService } from 'ng2-image-lazy-load';
+
 
 
 import {
@@ -52,7 +53,7 @@ type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     AboutComponent,
@@ -77,7 +78,7 @@ export class AppModule {
   constructor(
     public appRef: ApplicationRef,
     public appState: AppState
-  ) {}
+  ) { }
 
   public hmrOnInit(store: StoreType) {
     if (!store || !store.state) {
@@ -105,7 +106,7 @@ export class AppModule {
     // recreate root elements
     store.disposeOldHosts = createNewHosts(cmpLocation);
     // save input values
-    store.restoreInputValues  = createInputTransfer();
+    store.restoreInputValues = createInputTransfer();
     // remove styles
     removeNgStyles();
   }

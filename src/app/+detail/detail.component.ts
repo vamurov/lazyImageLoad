@@ -11,7 +11,7 @@ console.log('`Detail` component loaded asynchronously');
 @Component({
   selector: 'detail',
   template: `
-    <h1>Approach 2 - web worker</h1>
+    <h2>Approach 2 - web worker</h2>
      <div imageLazyLoadArea [imageLazyLoadConfig]="lazyLoadConfig">
         <span *ngFor="let image of images">
           <img [imageLazyLoadItem]="image.url" width="50px;" height="50px;"/>

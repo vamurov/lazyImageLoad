@@ -20,7 +20,6 @@ import { AppState } from './app.service';
   ],
   template: `
     <nav>
-    
       <a [routerLink]=" ['./home'] " routerLinkActive="active">
         Approach 1 (with ViewPort detection)
       </a>
@@ -28,10 +27,7 @@ import { AppState } from './app.service';
         Approach 2 (web worker)
       </a>
       <a [routerLink]=" ['./barrel'] " routerLinkActive="active">
-        Barrel
-      </a>
-      <a [routerLink]=" ['./about'] " routerLinkActive="active">
-        About
+        Approach 3 (Blazy)
       </a>
     </nav>
 
