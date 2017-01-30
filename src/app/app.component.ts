@@ -20,14 +20,12 @@ import { AppState } from './app.service';
   ],
   template: `
     <nav>
-      <a [routerLink]=" ['./'] " routerLinkActive="active">
-        Index
-      </a>
+    
       <a [routerLink]=" ['./home'] " routerLinkActive="active">
-        Home
+        Approach 1 (with ViewPort detection)
       </a>
       <a [routerLink]=" ['./detail'] " routerLinkActive="active">
-        Detail
+        Approach 2 (web worker)
       </a>
       <a [routerLink]=" ['./barrel'] " routerLinkActive="active">
         Barrel

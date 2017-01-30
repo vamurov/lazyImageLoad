@@ -1,12 +1,8 @@
 <div class="card-container">
   <h1 x-large class="sample-content">
 
-    <h1>Images</h1>
-      <!--<div imageLazyLoadArea [imageLazyLoadConfig]="lazyLoadConfig">
-        <span *ngFor="let image of images">
-          <img [imageLazyLoadItem]="image.url" width="25px;" height="25px;"/>
-        </span>
-      </div>-->
+    <h2>Approach 1 - zone.runOutsideAngular()</h2>
+     
 
       <span *ngFor="let image of images">
        <img width="50px;" height="50px;" [src]="'http://tantrafestival.ee/wp-content/plugins/table-popup/loading.gif'" [offset]="'100'" [lazyLoad]="image.url">

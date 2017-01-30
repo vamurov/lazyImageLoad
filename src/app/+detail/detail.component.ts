@@ -1,7 +1,5 @@
-import {
-  Component,
-  OnInit,
-} from '@angular/core';
+import { IImageLazyLoadConfig } from 'ng2-image-lazy-load';
+import { Component, Input, OnInit } from '@angular/core';
 /*
  * We're loading this component asynchronously
  * We are using some magic with es6-promise-loader that will wrap the module with a Promise
@@ -13,19 +11,48 @@ console.log('`Detail` component loaded asynchronously');
 @Component({
   selector: 'detail',
   template: `
-    <h1>Hello from Detail</h1>
-    <span>
-      <a [routerLink]=" ['./child-detail'] ">
-        Child Detail
-      </a>
-    </span>
-    <router-outlet></router-outlet>
+    <h1>Approach 2 - web worker</h1>
+     <div imageLazyLoadArea [imageLazyLoadConfig]="lazyLoadConfig">
+        <span *ngFor="let image of images">
+          <img [imageLazyLoadItem]="image.url" width="50px;" height="50px;"/>
+        </span>
+      </div>
   `,
+
+  styles: [`
+
+  .placeholder {
+      width: 25px;
+    
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('http://tantrafestival.ee/wp-content/plugins/table-popup/loading.gif');
+  }`]
 })
 export class DetailComponent implements OnInit {
 
+
+  public images: any[] = [];
+
+  @Input()
+  public lazyLoadConfig: IImageLazyLoadConfig = {
+    headers: {
+    },
+    loadingClass: 'placeholder',
+
+  };
+
   public ngOnInit() {
-    console.log('hello `Detail` component');
+    
+    for (let i = 1; i < 400; i++) {
+      this.images.push({
+        name: `image 1`,
+        url: `http://placehold.it/${i * 2}x${i * 2}}`
+      });
+
+    }
   }
+
+  
 
 }
