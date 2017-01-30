@@ -25,23 +25,22 @@ export class HomeComponent implements OnInit {
 
   public images: any[] = [];
 
+  public defaultImage = '../../assets/img/loading_icon.gif';
+
+  public offset: number = 100;
 
   // TypeScript public modifiers
   constructor(
     public appState: AppState,
-    public title: Title
-  ) {
+    public title: Title) {
+  }
 
+  public ngOnInit(): void {
     for (let i = 1; i < 400; i++) {
       this.images.push({
         name: `image 1`,
         url: `http://placehold.it/${i * 2}x${i * 2}}`
       });
-
     }
-
   }
-
-
-
 }

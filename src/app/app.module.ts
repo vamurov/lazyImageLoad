@@ -64,7 +64,7 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    ImageLazyLoadModule, LazyLoadImageModule,
+    LazyLoadImageModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

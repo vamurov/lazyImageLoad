@@ -5,7 +5,7 @@
      
 
       <span *ngFor="let image of images">
-       <img width="50px;" height="50px;" [src]="'http://tantrafestival.ee/wp-content/plugins/table-popup/loading.gif'" [offset]="'100'" [lazyLoad]="image.url">
+       <img width="50px;" height="50px;" [src]="defaultImage" [offset]="offset" [lazyLoad]="image.url">
        <!--<img width="50px;" height="50px;" [src]="image.url">-->
        </span>
       <div class="placeholder"></div>
