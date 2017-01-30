@@ -44,10 +44,10 @@ export class DetailComponent implements OnInit {
 
   public ngOnInit() {
     
-    for (let i = 1; i < 400; i++) {
+    for (let i = 100; i < 500; i++) {
       this.images.push({
         name: `image 1`,
-        url: `http://placehold.it/${i * 2}x${i * 2}}`
+        url: `http://placehold.it/${i}x${i}`
       });
 
     }
